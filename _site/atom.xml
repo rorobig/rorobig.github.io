@@ -4,7 +4,7 @@
  <title>Lost in the sauce</title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2021-10-31T13:13:34+01:00</updated>
+ <updated>2021-11-26T21:57:35+01:00</updated>
  <id></id>
  <author>
    <name>Rocheandley Kwidama</name>
@@ -13,161 +13,29 @@
 
  
  <entry>
-   <title>Ephesus Jekyll Blog Theme</title>
-   <link href="/ephesus-jekyll-blog-theme/"/>
-   <updated>2021-09-22T02:00:00+02:00</updated>
-   <id>/Ephesus-Jekyll-Blog-Theme</id>
-   <content type="html">&lt;p&gt;Lorem markdownum nimiumque inutile ulterius tum fluctus arbore aethere in
-laqueosque lorisque tabuerit. Timor pectoraque vetus conspiceris donis arbitrium
-fecerat &lt;em&gt;ait dulci&lt;/em&gt; et reus vultumque ubi &lt;a href=&quot;http://una.net&quot;&gt;mittere&lt;/a&gt; cernunt
-hosti.&lt;/p&gt;
+   <title>Windows 11</title>
+   <link href="/graduaded/"/>
+   <updated>2021-11-26T00:00:00+01:00</updated>
+   <id>/w11</id>
+   <content type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
+&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//Function declarations&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;is_prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;goldbach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;!-- ![windows11](/assets/images/windowslogo.png &quot;windows11&quot;) --&gt;
 
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter even number:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;goldbach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Incorrect number!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;the-windows-11-experience&quot;&gt;The windows 11 experience.&lt;/h4&gt;
+&lt;p&gt;I’ve been using windows 11 for 3 weeks now and i’ve gotta say, the windows experienced has been significantly improved.&lt;br /&gt;
+What i like the most about it is the smootness. The experience feels very polished and something i really appreciate is the new notification sound. In Windows 10 i found them quiete sharp. In windows 11 they have been dimmed down to be less intense on the ears.&lt;/p&gt;
 
-&lt;h2 id=&quot;nec-partus-ferox-veniam-serpentis-servet-viro&quot;&gt;Nec partus ferox veniam serpentis servet viro&lt;/h2&gt;
+&lt;h4 id=&quot;wsl&quot;&gt;WSL&lt;/h4&gt;
+&lt;p&gt;The holy saviour himself, Windows Subsystem Linux. Back in the days i used to have dual boot to do school work or develop on. Developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux ker nel. This remove the need to use virtual machines.&lt;/p&gt;
 
-&lt;p&gt;Sed &lt;strong&gt;premunt turba verum&lt;/strong&gt; circueunt ex inmurmurat confundit area premente
-&lt;a href=&quot;http://spectante-mulcet.com/magna&quot;&gt;unus&lt;/a&gt;, qui resupinus facit adsuetam. Dixit
-sic &lt;em&gt;tandemque vultus aniles&lt;/em&gt; fuerat vulgares removete arva silet, mutabitur
-ramos omnes absens Idan vallibus volucrem. Feremus loquuntur furit &lt;strong&gt;rerum
-pectora violata&lt;/strong&gt;, aevo &lt;a href=&quot;http://laborum.net/modo&quot;&gt;unda condita&lt;/a&gt; non bracchia
-viscera. &lt;em&gt;Candida saepe&lt;/em&gt; rettulit tegumen &lt;strong&gt;abest de si&lt;/strong&gt;, et procul, hoc qui
-liquidarum, totidem pars pavidum filia iam.&lt;/p&gt;
+&lt;p&gt;IN winwdows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wsl --install&lt;/code&gt; &lt;br /&gt;
+in powershell and your done.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Aulaea saevam&lt;/li&gt;
-  &lt;li&gt;Animam conquerar&lt;/li&gt;
-  &lt;li&gt;Lycormas fatemur germanam&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;fata-huc-cessura-secant&quot;&gt;Fata huc cessura secant&lt;/h2&gt;
-
-&lt;p&gt;Est urbem ferrum gratia altera? In nec profundo valuit vidit, ira o adhuc
-convicia. Quoque simul, nisi ausis equus tum veluti: gener. Lacu abesset pinnas,
-albaque, esto, quem quod.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Deceant tormenta nomine&lt;/li&gt;
-  &lt;li&gt;Furti visi honorati Dardanio profundo genus superos&lt;/li&gt;
-  &lt;li&gt;Cum cadi fundit accensus silentibus ipsa ambiguum&lt;/li&gt;
-  &lt;li&gt;Cogis data sparsosque falleret nepos de sedem&lt;/li&gt;
-  &lt;li&gt;Ingeminat falcato somno iratus fac paterna&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Sua communiter&lt;/strong&gt; hoc exire iurares usus, &lt;em&gt;percusso iunonis tibi&lt;/em&gt;? Ubi magna
-crinem adsueta ancipitesque sitim; et genus ferumque? Quod &lt;strong&gt;lupos tutus&lt;/strong&gt;, cum
-insania &lt;a href=&quot;http://sparserat.org/cinyras&quot;&gt;tanta Cephalum&lt;/a&gt; harundine eligit
-genitoris ad concutit.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Is this shit fucking working</title>
-   <link href="/hello-world/"/>
-   <updated>2021-02-09T01:00:00+01:00</updated>
-   <id>/roro</id>
-   <content type="html">&lt;p&gt;Hello world&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Justo imperdiet condimentum ad cum aca</title>
-   <link href="/justo-imperdiet-condimentum-ad-cum-acanone/"/>
-   <updated>2021-02-09T01:00:00+01:00</updated>
-   <id>/sample-3</id>
-   <content type="html">&lt;p&gt;Lorem markdownum feriam: vir, vulnere cum postquam ocius, ecce. Exsangui totiens
-generis &lt;a href=&quot;http://www.fertur.io/aeacidis&quot;&gt;Iuppiter&lt;/a&gt; dederunt cerva refoventque,
-mea nulla secessit modo et. Hospes &lt;strong&gt;felices stetimusque&lt;/strong&gt; erat: &lt;strong&gt;Niobe
-nostro&lt;/strong&gt;, ne ruris &lt;em&gt;in deas extrema&lt;/em&gt;. Thebaides crimina, tu dixerat eripiet
-quiescere animae, pervenientia fuit furta sacrata illam, dabat. Quod munera
-monstra rimas ultra cunctos.&lt;/p&gt;
-
-&lt;p&gt;Incipit pars telis quod colebat tenet Iovis, Perseus et non Hectoris caesae temperat tetigere pulvis? Phaethonteos avus Asopida mansit proelia quamquam furoris: fuit Haemum functa non ferarum vincat &lt;em&gt;pretium te gloria&lt;/em&gt; ignibus.&lt;/p&gt;
-
-&lt;h2 id=&quot;potum-maius-urbem&quot;&gt;Potum maius urbem&lt;/h2&gt;
-
-&lt;p&gt;Polydori arvis. Quoniam faciesque dona plus Iasone &lt;strong&gt;credas&lt;/strong&gt;: et novem recipit
-praeceps desint: teneat naribus. &lt;a href=&quot;http://fierent.net/miserrimasecreta&quot;&gt;Athamanas
-Cupido&lt;/a&gt;, ureret gradere adapertaque nacta
-spargere pater et &lt;a href=&quot;http://nocte-conclamat.org/indiciique-micant&quot;&gt;fata&lt;/a&gt; ferrove
-&lt;strong&gt;et&lt;/strong&gt; loqui essem Tegeaea varios leviter. Et nymphis in exhibita villo!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/ephesus.jpg&quot; alt=&quot;Ephesus&quot; title=&quot;Ephesus&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Sacra erat cuncta. Phoenix cursu regit, Diti, certaque nocte Iuno, amantem
-Achaia: est deus divellere tenet.&lt;/p&gt;
-
-&lt;h2 id=&quot;clara-poterant-caret&quot;&gt;Clara poterant caret&lt;/h2&gt;
-
-&lt;p&gt;Iungimus solis, est Inachides haut orbataque sedebat, tamen Crathis crinita
-parentem. Hanc ara quot caedis et spondere fit, illi diu Cereris Oechalia Iris
-vident septem, fumos condiderat rutilasque. Tenent instrumenta nudaverat dicta.
-Et et curis: quod Arcades ipsa: vellet, altius non madidos numina in.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Marmor regina Ionium elisa data Talibus rogat&lt;/li&gt;
-  &lt;li&gt;Novi nosterque hac perque poenam exemplis&lt;/li&gt;
-  &lt;li&gt;Finemque nitidis alteriusque odiique aspicit Tartessia est&lt;/li&gt;
-  &lt;li&gt;Iuvenum nostri alipedi&lt;/li&gt;
-  &lt;li&gt;Quae remorata et arto silvestre fidae adhuc&lt;/li&gt;
-  &lt;li&gt;Cornua altus intrat os vocant regia&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Petentem pro quod Boreas mens refers: referre et idem natus caput Martis temone
-tapetibus. Partim vis neve maledictaque crede parentum puppes orbe subterque
-potiar. Te auras totum tertius pondera puer novat &lt;strong&gt;Verque&lt;/strong&gt; fugit frugiferas
-ultima tuas dei territus di ablatus, cum des artes.&lt;/p&gt;
-
-&lt;p&gt;Socium est facti est enim neve patris facto Laertaque formam. E quoque manibus
-Cecropio telorum &lt;em&gt;ultima&lt;/em&gt;, est non &lt;a href=&quot;http://manus.io/est&quot;&gt;est&lt;/a&gt;, sim desiluit
-solida; fecit. Variarum &lt;strong&gt;Schoeneia&lt;/strong&gt; pomaque in protinus disiunxisse puer,
-elaborque modo: hos religata, tandem mihi amor mortalia. Hostem et tamen
-carchesia Bacchi heros crocique ignibus redeamus quae frustra vidit?&lt;/p&gt;
-
-&lt;p&gt;Iungimus solis, est Inachides haut orbataque sedebat, tamen Crathis crinita
-parentem. Hanc ara quot caedis et spondere fit, illi diu Cereris Oechalia Iris
-vident septem, fumos condiderat rutilasque. Tenent instrumenta nudaverat dicta.
-Et et curis: quod Arcades ipsa: vellet, altius non madidos numina in.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Marmor regina Ionium elisa data Talibus rogat&lt;/li&gt;
-  &lt;li&gt;Novi nosterque hac perque poenam exemplis&lt;/li&gt;
-  &lt;li&gt;Finemque nitidis alteriusque odiique aspicit Tartessia est&lt;/li&gt;
-  &lt;li&gt;Iuvenum nostri alipedi&lt;/li&gt;
-  &lt;li&gt;Quae remorata et arto silvestre fidae adhuc&lt;/li&gt;
-  &lt;li&gt;Cornua altus intrat os vocant regia&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Petentem pro quod Boreas mens refers: referre et idem natus caput Martis temone
-tapetibus. Partim vis neve maledictaque crede parentum puppes orbe subterque
-potiar. Te auras totum tertius pondera puer novat &lt;strong&gt;Verque&lt;/strong&gt; fugit frugiferas
-ultima tuas dei territus di ablatus, cum des artes.&lt;/p&gt;
-
-&lt;p&gt;Socium est facti est enim neve patris facto Laertaque formam. E quoque manibus
-Cecropio telorum &lt;em&gt;ultima&lt;/em&gt;, est non &lt;a href=&quot;http://manus.io/est&quot;&gt;est&lt;/a&gt;, sim desiluit
-solida; fecit. Variarum &lt;strong&gt;Schoeneia&lt;/strong&gt; pomaque in protinus disiunxisse puer,
-elaborque modo: hos religata, tandem mihi amor mortalia. Hostem et tamen
-carchesia Bacchi heros crocique ignibus redeamus quae frustra vidit?&lt;/p&gt;
+&lt;h4 id=&quot;final-verdict&quot;&gt;Final verdict&lt;/h4&gt;
+&lt;p&gt;All by all Windows 11 has a very refreshing look to it,windows apps can now be managed via a the cli windows package manager win-get, the wallpapers are very immersive and the quality of the operating system just feels solid. The updates are more controlled now, meaning less update pop ups. Can’t believe i’m about to type these words, but i think windows has finally done it.&lt;/p&gt;
 </content>
  </entry>
  

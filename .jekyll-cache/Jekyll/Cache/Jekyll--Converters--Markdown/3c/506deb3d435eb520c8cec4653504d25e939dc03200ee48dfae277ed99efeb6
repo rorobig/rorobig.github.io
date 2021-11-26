@@ -1,0 +1,20 @@
+I"�<p align="center">
+<img src="/assets/images/windowslogo.png" alt="drawing" width="500" />
+</p>
+
+<!-- ![windows11](/assets/images/windowslogo.png "windows11") -->
+
+<h4 id="the-windows-11-experience">The windows 11 experience.</h4>
+<p>I’ve been using windows 11 for 3 weeks now and i’ve gotta say, the windows experienced has been significantly improved.<br />
+What i like the most about it is the smootness. The experience feels very polished and something i really appreciate is the new notification sound. In Windows 10 i found them quiete sharp. In windows 11 they have been dimmed down to be less intense on the ears.</p>
+
+<h4 id="wsl">WSL</h4>
+<p>The holy saviour himself, Windows Subsystem Linux. Back in the days i used to have dual boot to do school work or develop on. Developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux ker nel. This remove the need to use virtual machines.</p>
+
+<p>IN winwdows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
+<code class="language-plaintext highlighter-rouge">wsl --install</code> <br />
+in powershell and your done.</p>
+
+<h4 id="final-verdict">Final verdict</h4>
+<p>All by all Windows 11 has a very refreshing look to it,windows apps can now be managed via a the cli windows package manager win-get, the wallpapers are very immersive and the quality of the operating system just feels solid. The updates are more controlled now, meaning less update pop ups. Can’t believe i’m about to type these words, but i think windows has finally done it.</p>
+:ET
