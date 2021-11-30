@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Lost in the sauce</title>
- <link href="/atom.xml" rel="self"/>
- <link href="/"/>
- <updated>2021-11-26T21:57:35+01:00</updated>
- <id></id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2021-11-30T23:21:16+01:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Rocheandley Kwidama</name>
    <email>rkwidama@hotmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Windows 11</title>
-   <link href="/graduaded/"/>
+   <link href="http://localhost:4000/w-11"/>
    <updated>2021-11-26T00:00:00+01:00</updated>
-   <id>/w11</id>
+   <id>http://localhost:4000/w11</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
@@ -28,9 +28,9 @@
 What i like the most about it is the smootness. The experience feels very polished and something i really appreciate is the new notification sound. In Windows 10 i found them quiete sharp. In windows 11 they have been dimmed down to be less intense on the ears.&lt;/p&gt;
 
 &lt;h4 id=&quot;wsl&quot;&gt;WSL&lt;/h4&gt;
-&lt;p&gt;The holy saviour himself, Windows Subsystem Linux. Back in the days i used to have dual boot to do school work or develop on. Developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux ker nel. This remove the need to use virtual machines.&lt;/p&gt;
+&lt;p&gt;The holy saviour himself, Windows Subsystem for Linux. Back in the days I used to have a dual boot setup so i can do my school work or develop on. However developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux kernel. This remove the need to use virtual machines.&lt;/p&gt;
 
-&lt;p&gt;IN winwdows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
+&lt;p&gt;In Windows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wsl --install&lt;/code&gt; &lt;br /&gt;
 in powershell and your done.&lt;/p&gt;
 

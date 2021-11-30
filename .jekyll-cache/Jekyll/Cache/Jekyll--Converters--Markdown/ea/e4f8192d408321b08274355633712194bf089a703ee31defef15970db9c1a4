@@ -1,4 +1,4 @@
-I"¬<p align="center">
+I"Ç<p align="center">
 <img src="/assets/images/windowslogo.png" alt="drawing" width="500" />
 </p>
 
@@ -9,9 +9,9 @@
 What i like the most about it is the smootness. The experience feels very polished and something i really appreciate is the new notification sound. In Windows 10 i found them quiete sharp. In windows 11 they have been dimmed down to be less intense on the ears.</p>
 
 <h4 id="wsl">WSL</h4>
-<p>The holy saviour himself, Windows Subsystem Linux. Back in the days i used to have dual boot to do school work or develop on. Developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux ker nel. This remove the need to use virtual machines.</p>
+<p>The holy saviour himself, Windows Subsystem for Linux. Back in the days I used to have a dual boot setup so i can do my school work or develop on. However developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux kernel. This remove the need to use virtual machines.</p>
 
-<p>IN winwdows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
+<p>In Windows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
 <code class="language-plaintext highlighter-rouge">wsl --install</code> <br />
 in powershell and your done.</p>
 
