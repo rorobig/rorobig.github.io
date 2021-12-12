@@ -136,6 +136,7 @@ body{
 .blog-post-content{
   width: 100%;
   font-size: 18px;
+  text-align: center;
 }
 
 .post-tag{background: var(--bg-color); color:var(--primary-font-color); padding: 5px 10px;}
