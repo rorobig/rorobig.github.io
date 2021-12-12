@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Lost in the sauce</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2021-12-12T14:02:50+01:00</updated>
- <id>http://localhost:4000</id>
+ <link href="/atom.xml" rel="self"/>
+ <link href="/"/>
+ <updated>2021-12-12T15:06:48+01:00</updated>
+ <id></id>
  <author>
    <name>Rocheandley Kwidama</name>
    <email>rkwidama@hotmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>SELinux</title>
-   <link href="http://localhost:4000/SEL"/>
+   <link href="/SEL"/>
    <updated>2021-12-12T00:00:00+01:00</updated>
-   <id>http://localhost:4000/SELiux</id>
+   <id>/SELiux</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/selinux.jpg&quot; alt=&quot;drawing&quot; width=&quot;400&quot; /&gt;
 &lt;/p&gt;
@@ -150,9 +150,9 @@ SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community
  
  <entry>
    <title>Windows 11</title>
-   <link href="http://localhost:4000/w-11"/>
+   <link href="/w-11"/>
    <updated>2021-11-26T00:00:00+01:00</updated>
-   <id>http://localhost:4000/w11</id>
+   <id>/w11</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
