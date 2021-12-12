@@ -1,0 +1,129 @@
+I"�$<p align="center">
+<img src="/assets/images/selinux.jpg" alt="drawing" width="400" />
+</p>
+
+<h3 id="the-s-in-security-stands-for-selinux">the S in security stands for SELinux</h3>
+
+<p>For the last couple of weeks I’ve been doing a lot of Infrastructure as a code on CentOS.Think of Elastic Stack, Zabbix, Nagios, Salt, etc. Something I’ve noticed on every single tutorial
+of these frameworks is that it starts with the message “Disable SELinux to prevent error’s”. While it might be convenient to disable it so your infrastructure can work, it’s a horrible idea since u just disabled the platform greatest defense system. But what exactly is SELinux?</p>
+
+<p>SELinux or Security Enhanced Linux is a more advance access control technique which initially was developed by the NSA to prevent malicious intrusions and tempering.
+The “enhanced” part of SELinux becomes clear when you look at it’s access control. Normal Unix systems uses the Discretionary Access Control (DAC) which dictates the read, write and execute permissions. SeLinux sits on top of this with it’s Mandatory Access Control MAC) which basically dictates how much control a user can have over a process.</p>
+
+<p>SELinux primarily consists of three modes:</p>
+<ul>
+  <li>Enforcing</li>
+  <li>Permissive</li>
+  <li>Disabled</li>
+</ul>
+
+<p>When the state is set to <strong><em>Enforcing mode</em></strong>, SELinux is completely active and will only allow access using the SELinux policies.<br />
+In the <strong><em>Permissive mode</em></strong>, SELinux will be monitoring and logging all activity it detects, but unlike Enforcing, it won’t block anything.<br />
+In the <strong><em>Disabled mode</em></strong>, SELinux is completely disabled.</p>
+
+<p>On RHEL based systems, the configuration of SELinux can be found under <strong>/etc/sysconfig/selinux</strong>, however in order for changes made to this file 
+to be effective, the system needs to be rebooted.</p>
+
+<h4 id="configuring-selinux">Configuring SELinux</h4>
+
+<p>1st it’s important to know which mode SELinux is currently running on. This can be achieved by entering the following command.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">foo@bar:~$</span><span class="w"> </span>getenforce
+</code></pre></div></div>
+
+<p>To change the mode to permissive or enforcing run:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span>enforcing
+<span class="gp">foo@bar:~$</span><span class="w"> </span>setenforce 1
+</code></pre></div></div>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span>permissive
+<span class="gp">foo@bar:~$</span><span class="w"> </span>setenforce 0
+</code></pre></div></div>
+
+<h3 id="avc-denials">AVC Denials</h3>
+
+<p>If SELinux isn’t properly configured, you might get error’s which will cause some services to crash. To check if SELinux is Working properly and not 
+generating false positives (wrong denials) to any service or port we can check the logs using a common Unix tool like Cat and Tail in combination with Grep.
+The default directory for SELinux is /var/log/audit/audit.log. But I’ve personally been in situation where this logfile can be too overwhelming with details.
+To get a more concise description of the logs , I lie using <strong>sealert</strong>. The command can be executed as follows.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">foo@bar:~$</span><span class="w"> </span>sealert <span class="nt">-l</span> e9d8fa2e-3608-1ffa-9e72-32c1b85e460b
+<span class="go">    SELinux is preventing httpd from open access on the file /var/log/httpd/error_log.
+
+***** Plugin restorecon (95.5 confidence) suggests   **************************
+
+If you want to fix the label.
+    /var/log/httpd/error.log default label should be httpd_log_t.
+    Then you can run restorecon.
+    Do
+</span><span class="gp">    #</span><span class="w"> </span>/sbin/restorecon <span class="nt">-v</span> /var/log/httpd/error_log
+<span class="go">
+[trimmed for clarity]
+</span></code></pre></div></div>
+
+<h3 id="selinux-policies">SELinux policies</h3>
+
+<p>SELinux policies are a set of predefined rules that instructs the SELinux security engine how to function.
+A policy defines a set of rules for a particular environment. These policies are controlled by Boolean values and it allows us to change 
+part of the policy at runtime without needing to have knowledge about rewriting policies.</p>
+
+<p>and be used as follows.</p>
+
+<p>Let’s take a simple FTP service as example. Say we want to share a directory over FTP for read-write access. If SELinux is in enforcing mode,
+it will block the FTP daemon from reading and writing in that specified Directory. To fix this, let’s change the policy so that ftp can access the directory.
+first run the <strong>semanage</strong> command in combination with grep to show active Boolean values</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">foo@bar:~$</span><span class="w"> </span>semanage boolean –l | <span class="nb">grep </span>ftp
+<span class="go">
+</span><span class="gp">allow_ftpd_full_access   -&gt;</span><span class="w"> </span>off       Allow ftp access to directories
+<span class="go">
+[trimmed for clarity]
+</span></code></pre></div></div>
+
+<p>As you can see, the Boolean false is set to false (off). To change this we simply run the following command, and the user trying to user the FTP service on the pc
+can do this without any further SELinux issues.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">foo@bar:~$</span><span class="w"> </span>setsebool <span class="nt">-P</span> allow_ftpd_full_access on
+</code></pre></div></div>
+
+<h3 id="labelling--context">Labelling &amp; Context</h3>
+<p>Every file, folder, port or process on a Unix system can and is by default labelled with the SELinux context.</p>
+
+<p>These can be viewed as follow.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">#</span><span class="k">for </span>ports
+<span class="gp">foo@bar:~$</span><span class="w"> </span>netstat –anpZ | <span class="nb">grep </span>httpd   
+<span class="go">
+</span><span class="gp">#</span><span class="k">for </span>running processes  
+<span class="gp">foo@bar:~$</span><span class="w"> </span>ps –auxZ | <span class="nb">grep </span>httpd   
+<span class="go">
+</span><span class="gp">#</span><span class="k">for </span>directories  
+<span class="gp">foo@bar:~$</span><span class="w"> </span><span class="nb">ls</span> –Z /etc/httpd  
+</code></pre></div></div>
+
+<p>notice the -Z flag used at every command, this flag tells our system to also show us the context label.</p>
+
+<p>To understand the concept of labelling lets use an example.</p>
+
+<p>Lets say we are running a apache (httpd) server which is using <em>/home/dev/html</em> as document directory rather than <em>/var/www/html/</em>.
+SELinux will consider this a violation of policy and blocks the webpage. That’s because, as discussed above, the security context associated with the html files are wrong.</p>
+
+<p>To check the default context, run the following command.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">foo@bar:~$</span><span class="w"> </span><span class="nb">ls</span> –lz /var/www/html
+<span class="go">-rw-r—r—. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/
+</span></code></pre></div></div>
+<p>Here you can see httpd_sys_content_t as context for html files. This exact context needs to be set for the created <em>/home/dev/html/</em> direcotry too.
+This can be accomplished by running the following  3 commands.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">foo@bar:~$</span><span class="w"> </span>semanage fcontext <span class="nt">-a</span> <span class="nt">-t</span> httpd_sys_content_t <span class="s1">'/home/dev/html(/.*)?'</span>
+<span class="gp">foo@bar:~$</span>semanage fcontext <span class="nt">-l</span> | <span class="nb">grep</span> <span class="s1">'/home/dev/html'</span>
+<span class="go">/home/dev/html(/.*)? all files system_u:object_r:httpd_sys_content_t:s0
+</span><span class="gp">foo@bar:~$</span><span class="w"> </span>restorecon <span class="nt">-Rv</span> /home/dev/html
+</code></pre></div></div>
+<p>Once the context has been changed by <strong>semanage</strong>, restore con will load the default context of files and directories.
+The webserver will now be able to read files from the directory as the security context of the folder has been changed to ‘httpd_sys_content_t’.</p>
+
+<hr />
+<p>As you can see SELinux can provide us with various way for hardening every file, process or port on our system. If you’d like a more descriptive explanation of 
+SELinux I highly suggest <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-selinux-on-centos-7-part-1-basic-concepts">This</a>  digital ocean article.</p>
+
+:ET

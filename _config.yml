@@ -14,7 +14,7 @@ discus-identifier:  XXX
 # Author settings
 author:
   name: Rocheandley Kwidama
-  bio: Platform Engineer @ Quintor / BSc. Network and Security Engineering <br> @kenepatech <br> Open Source /#linux
+  bio: Platform Engineer @ Quintor / BSc. Network and Security Engineering <br> @kenepatech <br> Linux Enthusiast And Sometimes Windows.
   picture: assets/images/rorocomm.png 
   github: rorobig # github username
   twitter: Walking_dolphin # twitter username
@@ -36,7 +36,9 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-
+sass:
+    sass_dir: _sass
+    
 exclude:
   - .jekyll-cache
   - .obsidian

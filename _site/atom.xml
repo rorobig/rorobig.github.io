@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Lost in the sauce</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2021-11-30T23:21:16+01:00</updated>
- <id>http://localhost:4000</id>
+ <link href="/atom.xml" rel="self"/>
+ <link href="/"/>
+ <updated>2021-12-12T12:10:04+01:00</updated>
+ <id></id>
  <author>
    <name>Rocheandley Kwidama</name>
    <email>rkwidama@hotmail.com</email>
@@ -13,10 +13,146 @@
 
  
  <entry>
+   <title>SELinux</title>
+   <link href="/SEL"/>
+   <updated>2021-12-12T00:00:00+01:00</updated>
+   <id>/SELiux</id>
+   <content type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/images/selinux.jpg&quot; alt=&quot;drawing&quot; width=&quot;400&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&quot;the-s-in-security-stands-for-selinux&quot;&gt;the S in security stands for SELinux&lt;/h3&gt;
+
+&lt;p&gt;For the last couple of weeks I’ve been doing a lot of Infrastructure as a code on CentOS.Think of Elastic Stack, Zabbix, Nagios, Salt, etc. Something I’ve noticed on every single tutorial
+of these frameworks is that it starts with the message “Disable SELinux to prevent error’s”. While it might be convenient to disable it so your infrastructure can work, it’s a horrible idea since u just disabled the platform greatest defense system. But what exactly is SELinux?&lt;/p&gt;
+
+&lt;p&gt;SELinux or Security Enhanced Linux is a more advance access control technique which initially was developed by the NSA to prevent malicious intrusions and tempering.
+The “enhanced” part of SELinux becomes clear when you look at it’s access control. Normal Unix systems uses the Discretionary Access Control (DAC) which dictates the read, write and execute permissions. SeLinux sits on top of this with it’s Mandatory Access Control MAC) which basically dictates how much control a user can have over a process.&lt;/p&gt;
+
+&lt;p&gt;SELinux primarily consists of three modes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Enforcing&lt;/li&gt;
+  &lt;li&gt;Permissive&lt;/li&gt;
+  &lt;li&gt;Disabled&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When the state is set to &lt;strong&gt;&lt;em&gt;Enforcing mode&lt;/em&gt;&lt;/strong&gt;, SELinux is completely active and will only allow access using the SELinux policies.&lt;br /&gt;
+In the &lt;strong&gt;&lt;em&gt;Permissive mode&lt;/em&gt;&lt;/strong&gt;, SELinux will be monitoring and logging all activity it detects, but unlike Enforcing, it won’t block anything.&lt;br /&gt;
+In the &lt;strong&gt;&lt;em&gt;Disabled mode&lt;/em&gt;&lt;/strong&gt;, SELinux is completely disabled.&lt;/p&gt;
+
+&lt;p&gt;On RHEL based systems, the configuration of SELinux can be found under &lt;strong&gt;/etc/sysconfig/selinux&lt;/strong&gt;, however in order for changes made to this file 
+to be effective, the system needs to be rebooted.&lt;/p&gt;
+
+&lt;h4 id=&quot;configuring-selinux&quot;&gt;Configuring SELinux&lt;/h4&gt;
+
+&lt;p&gt;1st it’s important to know which mode SELinux is currently running on. This can be achieved by entering the following command.&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;getenforce
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To change the mode to permissive or enforcing run:&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;enforcing
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;setenforce 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;permissive
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;setenforce 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;avc-denials&quot;&gt;AVC Denials&lt;/h3&gt;
+
+&lt;p&gt;If SELinux isn’t properly configured, you might get error’s which will cause some services to crash. To check if SELinux is Working properly and not 
+generating false positives (wrong denials) to any service or port we can check the logs using a common Unix tool like Cat and Tail in combination with Grep.
+The default directory for SELinux is /var/log/audit/audit.log. But I’ve personally been in situation where this logfile can be too overwhelming with details.
+To get a more concise description of the logs , I lie using &lt;strong&gt;sealert&lt;/strong&gt;. The command can be executed as follows.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;sealert &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; e9d8fa2e-3608-1ffa-9e72-32c1b85e460b
+&lt;span class=&quot;go&quot;&gt;    SELinux is preventing httpd from open access on the file /var/log/httpd/error_log.
+
+***** Plugin restorecon (95.5 confidence) suggests   **************************
+
+If you want to fix the label.
+    /var/log/httpd/error.log default label should be httpd_log_t.
+    Then you can run restorecon.
+    Do
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;    #&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;/sbin/restorecon &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; /var/log/httpd/error_log
+&lt;span class=&quot;go&quot;&gt;
+[trimmed for clarity]
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;selinux-policies&quot;&gt;SELinux policies&lt;/h3&gt;
+
+&lt;p&gt;SELinux policies are a set of predefined rules that instructs the SELinux security engine how to function.
+A policy defines a set of rules for a particular environment. These policies are controlled by Boolean values and it allows us to change 
+part of the policy at runtime without needing to have knowledge about rewriting policies.&lt;/p&gt;
+
+&lt;p&gt;and be used as follows.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a simple FTP service as example. Say we want to share a directory over FTP for read-write access. If SELinux is in enforcing mode,
+it will block the FTP daemon from reading and writing in that specified Directory. To fix this, let’s change the policy so that ftp can access the directory.
+first run the &lt;strong&gt;semanage&lt;/strong&gt; command in combination with grep to show active Boolean values&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;semanage boolean –l | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;ftp
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;allow_ftpd_full_access   -&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;off       Allow ftp access to directories
+&lt;span class=&quot;go&quot;&gt;
+[trimmed for clarity]
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see, the Boolean false is set to false (off). To change this we simply run the following command, and the user trying to user the FTP service on the pc
+can do this without any further SELinux issues.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;setsebool &lt;span class=&quot;nt&quot;&gt;-P&lt;/span&gt; allow_ftpd_full_access on
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;labelling--context&quot;&gt;Labelling &amp;amp; Context&lt;/h3&gt;
+&lt;p&gt;Every file, folder, port or process on a Unix system can and is by default labelled with the SELinux context.&lt;/p&gt;
+
+&lt;p&gt;These can be viewed as follow.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;ports
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;netstat –anpZ | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;httpd   
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;running processes  
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;ps –auxZ | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;httpd   
+&lt;span class=&quot;go&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;directories  
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; –Z /etc/httpd  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;notice the -Z flag used at every command, this flag tells our system to also show us the context label.&lt;/p&gt;
+
+&lt;p&gt;To understand the concept of labelling lets use an example.&lt;/p&gt;
+
+&lt;p&gt;Lets say we are running a apache (httpd) server which is using &lt;em&gt;/home/dev/html&lt;/em&gt; as document directory rather than &lt;em&gt;/var/www/html/&lt;/em&gt;.
+SELinux will consider this a violation of policy and blocks the webpage. That’s because, as discussed above, the security context associated with the html files are wrong.&lt;/p&gt;
+
+&lt;p&gt;To check the default context, run the following command.&lt;/p&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; –lz /var/www/html
+&lt;span class=&quot;go&quot;&gt;-rw-r—r—. root root unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/html/
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here you can see httpd_sys_content_t as context for html files. This exact context needs to be set for the created &lt;em&gt;/home/dev/html/&lt;/em&gt; direcotry too.
+This can be accomplished by running the following  3 commands.&lt;/p&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;semanage fcontext &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; httpd_sys_content_t &lt;span class=&quot;s1&quot;&gt;'/home/dev/html(/.*)?'&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;semanage fcontext &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/home/dev/html'&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;/home/dev/html(/.*)? all files system_u:object_r:httpd_sys_content_t:s0
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;restorecon &lt;span class=&quot;nt&quot;&gt;-Rv&lt;/span&gt; /home/dev/html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Once the context has been changed by &lt;strong&gt;semanage&lt;/strong&gt;, restore con will load the default context of files and directories.
+The webserver will now be able to read files from the directory as the security context of the folder has been changed to ‘httpd_sys_content_t’.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;As you can see SELinux can provide us with various way for hardening every file, process or port on our system. If you’d like a more descriptive explanation of 
+SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/an-introduction-to-selinux-on-centos-7-part-1-basic-concepts&quot;&gt;This&lt;/a&gt;  digital ocean article.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>Windows 11</title>
-   <link href="http://localhost:4000/w-11"/>
+   <link href="/w-11"/>
    <updated>2021-11-26T00:00:00+01:00</updated>
-   <id>http://localhost:4000/w11</id>
+   <id>/w11</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
@@ -24,18 +160,18 @@
 &lt;!-- ![windows11](/assets/images/windowslogo.png &quot;windows11&quot;) --&gt;
 
 &lt;h4 id=&quot;the-windows-11-experience&quot;&gt;The windows 11 experience.&lt;/h4&gt;
-&lt;p&gt;I’ve been using windows 11 for 3 weeks now and i’ve gotta say, the windows experienced has been significantly improved.&lt;br /&gt;
-What i like the most about it is the smootness. The experience feels very polished and something i really appreciate is the new notification sound. In Windows 10 i found them quiete sharp. In windows 11 they have been dimmed down to be less intense on the ears.&lt;/p&gt;
+&lt;p&gt;I’ve been using windows 11 for 3 weeks now and I’ve got to say, the windows experienced has been significantly improved.&lt;br /&gt;
+What i like the most about it is the smoothness. The experience feels very polished and something I really appreciate is the new notification sound. In Windows 10 i found them quite sharp. In windows 11 they have been dimmed down to be less intense on the ears.&lt;/p&gt;
 
 &lt;h4 id=&quot;wsl&quot;&gt;WSL&lt;/h4&gt;
-&lt;p&gt;The holy saviour himself, Windows Subsystem for Linux. Back in the days I used to have a dual boot setup so i can do my school work or develop on. However developing on windows and figuring out environment variables is just not it. Luckily windows introduced the wsl which acts like a linux virtual machine that sits directly on the linux kernel. This remove the need to use virtual machines.&lt;/p&gt;
+&lt;p&gt;The holy saviour himself, Windows Subsystem for Linux. Back in the days I used to have a dual boot setup so I can do my school work or develop on. However developing on windows and figuring out environment variables is just not it. Luckily windows introduced the WSL which acts like a Linux virtual machine that sits directly on the Linux kernel. This remove the need to use virtual machines.&lt;/p&gt;
 
 &lt;p&gt;In Windows 10 the installation of WSL was a bit of a hassle. In windows 11 that processed has been simplified. Now with just a simple:
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wsl --install&lt;/code&gt; &lt;br /&gt;
-in powershell and your done.&lt;/p&gt;
+in PowerShell and your done.&lt;/p&gt;
 
 &lt;h4 id=&quot;final-verdict&quot;&gt;Final verdict&lt;/h4&gt;
-&lt;p&gt;All by all Windows 11 has a very refreshing look to it,windows apps can now be managed via a the cli windows package manager win-get, the wallpapers are very immersive and the quality of the operating system just feels solid. The updates are more controlled now, meaning less update pop ups. Can’t believe i’m about to type these words, but i think windows has finally done it.&lt;/p&gt;
+&lt;p&gt;All by all Windows 11 has a very refreshing look to it, Windows apps can now be managed via a the cli windows package manager win-get, the wallpapers are refreshing and the quality of the operating system just feels solid. The updates are more controlled now, meaning less update pop ups. Can’t believe I’m about to type these words, but I think windows has finally done it.&lt;/p&gt;
 </content>
  </entry>
  
