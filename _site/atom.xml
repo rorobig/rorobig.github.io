@@ -4,7 +4,7 @@
  <title>Lost in the sauce</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-01-22T18:12:07+01:00</updated>
+ <updated>2022-05-24T13:33:30+02:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Rocheandley Kwidama</name>
@@ -13,13 +13,57 @@
 
  
  <entry>
-   <title>NFT's</title>
+   <title>Jammy Jellyfish</title>
+   <link href="http://localhost:4000/jammyjellyfish"/>
+   <updated>2022-05-24T00:00:00+02:00</updated>
+   <id>http://localhost:4000/jj</id>
+   <content type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/images/jj.gif&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&quot;ubuntu-2204&quot;&gt;Ubuntu 22.04&lt;/h4&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Cyberark Administration Training</title>
+   <link href="http://localhost:4000/PAMA"/>
+   <updated>2022-05-24T00:00:00+02:00</updated>
+   <id>http://localhost:4000/Cyberark-admin</id>
+   <content type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/images/cyb-logo.jpg&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&quot;cyberark-privileged-access-management-training-done&quot;&gt;Cyberark Privileged Access Management training done!&lt;/h4&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Waduhek are NFT&apos;S ?!</title>
    <link href="http://localhost:4000/nft"/>
    <updated>2022-01-22T00:00:00+01:00</updated>
    <id>http://localhost:4000/nft</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/ape.png&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
 &lt;/p&gt;
+
+&lt;p&gt;A lot of people I’ve encountered recently have asked me about NFT’s, and honestly it’s a pretty confusing concept so I thought let me try to explain it in a  simple way so here I go.&lt;/p&gt;
+
+&lt;p&gt;NFT == Non-Fungible token, still confused? all good.&lt;/p&gt;
+
+&lt;p&gt;Non-Fungible basically means that it’s unique ( in value) and u cant trade for something else. Think like Pokemon cards, If you have a shinny Charizard card and u want to trade it for a Magikarp. One would think U’ve lost it. that’s the same concept that NFT uses. This is completely opposite to for example Bitcoin where if you were to trade 1 Bitcoin with someone for another Bitcoin, you guys both have 1 Bitcoin in value.&lt;/p&gt;
+
+&lt;h4 id=&quot;for-the-nerds&quot;&gt;For the nerds&lt;/h4&gt;
+&lt;p&gt;Now lets get a little bit deeper, NFT are basically part of the Ethereum blockchain. Ethereum is a crypto currency, just like Bitcoin, but what makes NFT so special is that it’s blockchain can store extra information like music, digital drawing , basically any digital media which make it work different than typical Ethereum coins. Basically, An NFT is a unit of data stored on a digital ledger, called a blockchain, which can be sold and traded. The NFT can be associated with a particular digital or physical asset (such as a file or a physical object) and a license to use the asset for a specified purpose.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-are-nfts-so-popular&quot;&gt;Why are NFT’s so popular?&lt;/h4&gt;
+&lt;p&gt;Well honestly, it’s just a hype, and like us humans we follow anything that’s currently trending especially if it has money involved. After some people started discovering how much money they can make trading NFT’s, the market skyrocketed, especially if people like Elon Musk tweet about it&lt;/p&gt;
+
+&lt;h4 id=&quot;so-where-do-i-buy&quot;&gt;So where do I buy?&lt;/h4&gt;
+&lt;p&gt;Well if u wanna get in the hype and also be the owner of an NFT which can be later valued to $69 million like &lt;a href=&quot;https://www.theverge.com/2021/3/11/22325054/beeple-christies-nft-sale-cost-everydays-69-million&quot; style=&quot;color: rgb(43,123,217); text-decoration: underline;&quot;&gt;this&lt;/a&gt;
+ guy. I personally use &lt;a href=&quot;https://www.opensea.io/&quot; style=&quot;color: rgb(43,123,217); text-decoration: underline;&quot;&gt;this&lt;/a&gt; website, it has a great collection and purchasing is pretty easy.
+Just connect your ETH wallet and u can purchase any NFT u like.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -34,8 +78,9 @@
 
 &lt;h3 id=&quot;the-s-in-security-stands-for-selinux&quot;&gt;the S in security stands for SELinux&lt;/h3&gt;
 
-&lt;p&gt;For the last couple of weeks I’ve been doing a lot of Infrastructure as a code on CentOS.Think of Elastic Stack, Zabbix, Nagios, Salt, etc. Something I’ve noticed on every single tutorial
-of these frameworks is that it starts with the message “Disable SELinux to prevent error’s”. While it might be convenient to disable it so your infrastructure can work, it’s a horrible idea since u just disabled the platform greatest defense system. But what exactly is SELinux?&lt;/p&gt;
+&lt;p&gt;For the last couple of weeks I’ve been doing a lot of Infrastructure As a Code on CentOS. Think of Elastic Stack, Zabbix, Nagios, Salt, etc. 
+One thing I’ve noticed on every single guide on how to use one of these frameworks is that it starts with the message “Disable SELinux to prevent error’s”. 
+While it might be convenient to disable it so your infrastructure can work, it’s a horrible idea since u just disabled the platform greatest defense system. But what exactly is SELinux?&lt;/p&gt;
 
 &lt;p&gt;SELinux or Security Enhanced Linux is a more advance access control technique which initially was developed by the NSA to prevent malicious intrusions and tempering.
 The “enhanced” part of SELinux becomes clear when you look at it’s access control. Normal Unix systems uses the Discretionary Access Control (DAC) which dictates the read, write and execute permissions. SeLinux sits on top of this with it’s Mandatory Access Control MAC) which basically dictates how much control a user can have over a process.&lt;/p&gt;
@@ -144,8 +189,8 @@ SELinux will consider this a violation of policy and blocks the webpage. That’
 &lt;p&gt;Here you can see httpd_sys_content_t as context for html files. This exact context needs to be set for the created &lt;em&gt;/home/dev/html/&lt;/em&gt; direcotry too.
 This can be accomplished by running the following  3 commands.&lt;/p&gt;
 
-&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;semanage fcontext &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; httpd_sys_content_t &lt;span class=&quot;s1&quot;&gt;'/home/dev/html(/.*)?'&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;semanage fcontext &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/home/dev/html'&lt;/span&gt;
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;semanage fcontext &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; httpd_sys_content_t &lt;span class=&quot;s1&quot;&gt;&apos;/home/dev/html(/.*)?&apos;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;semanage fcontext &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;/home/dev/html&apos;&lt;/span&gt;
 &lt;span class=&quot;go&quot;&gt;/home/dev/html(/.*)? all files system_u:object_r:httpd_sys_content_t:s0
 &lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;foo@bar:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;restorecon &lt;span class=&quot;nt&quot;&gt;-Rv&lt;/span&gt; /home/dev/html
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -154,7 +199,7 @@ The webserver will now be able to read files from the directory as the security 
 
 &lt;hr /&gt;
 &lt;p&gt;As you can see SELinux can provide us with various way for hardening every file, process or port on our system. If you’d like a more descriptive explanation of 
-SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/an-introduction-to-selinux-on-centos-7-part-1-basic-concepts&quot;&gt;This&lt;/a&gt;  DigitalOcean article.&lt;/p&gt;
+SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/an-introduction-to-selinux-on-centos-7-part-1-basic-concepts&quot;&gt;This DigitalOcean article&lt;/a&gt; .&lt;/p&gt;
 
 </content>
  </entry>
@@ -165,7 +210,7 @@ SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community
    <updated>2021-11-26T00:00:00+01:00</updated>
    <id>http://localhost:4000/w11</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/assets/images/nft.jpg&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
+&lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
 
 &lt;!-- ![windows11](/assets/images/windowslogo.png &quot;windows11&quot;) --&gt;
@@ -191,7 +236,7 @@ in PowerShell and your done.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Uh-ohh&lt;/strong&gt; did I speak too soon?&lt;br /&gt;
 So since last week I’ve been dealing with this pretty annoying issue where my WSL environment fails to start.
 Apparently it’s an issue with my current windows 11 build working together with hyperV. I’ve updated my system and the error seems to be gone patched.
-What’s still bugging me tho is that I’ve already applied this hotfix before and I got this issue again, and since WSL is my main development environment it’s very annoying to restart my pc every time this issue arrives. Hopefully this update fixed this issue.&lt;/p&gt;
+What’s still bugging me though is that I’ve already applied this hotfix before and I got this issue again, and since WSL is my main development environment it’s very annoying to restart my pc every time this issue arrives. Hopefully this update fixed this issue.&lt;/p&gt;
 </content>
  </entry>
  

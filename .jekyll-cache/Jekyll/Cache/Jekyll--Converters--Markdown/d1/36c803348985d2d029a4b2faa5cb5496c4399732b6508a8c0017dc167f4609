@@ -1,11 +1,12 @@
-I"�$<p align="center">
+I"�$<p align="center">
 <img src="/assets/images/selinux.jpg" alt="drawing" width="400" />
 </p>
 
 <h3 id="the-s-in-security-stands-for-selinux">the S in security stands for SELinux</h3>
 
-<p>For the last couple of weeks I’ve been doing a lot of Infrastructure as a code on CentOS.Think of Elastic Stack, Zabbix, Nagios, Salt, etc. Something I’ve noticed on every single tutorial
-of these frameworks is that it starts with the message “Disable SELinux to prevent error’s”. While it might be convenient to disable it so your infrastructure can work, it’s a horrible idea since u just disabled the platform greatest defense system. But what exactly is SELinux?</p>
+<p>For the last couple of weeks I’ve been doing a lot of Infrastructure As a Code on CentOS. Think of Elastic Stack, Zabbix, Nagios, Salt, etc. 
+One thing I’ve noticed on every single guide on how to use one of these frameworks is that it starts with the message “Disable SELinux to prevent error’s”. 
+While it might be convenient to disable it so your infrastructure can work, it’s a horrible idea since u just disabled the platform greatest defense system. But what exactly is SELinux?</p>
 
 <p>SELinux or Security Enhanced Linux is a more advance access control technique which initially was developed by the NSA to prevent malicious intrusions and tempering.
 The “enhanced” part of SELinux becomes clear when you look at it’s access control. Normal Unix systems uses the Discretionary Access Control (DAC) which dictates the read, write and execute permissions. SeLinux sits on top of this with it’s Mandatory Access Control MAC) which basically dictates how much control a user can have over a process.</p>
@@ -124,6 +125,6 @@ The webserver will now be able to read files from the directory as the security 
 
 <hr />
 <p>As you can see SELinux can provide us with various way for hardening every file, process or port on our system. If you’d like a more descriptive explanation of 
-SELinux I highly suggest <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-selinux-on-centos-7-part-1-basic-concepts">This</a>  DigitalOcean article.</p>
+SELinux I highly suggest <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-selinux-on-centos-7-part-1-basic-concepts">This DigitalOcean article</a> .</p>
 
 :ET
