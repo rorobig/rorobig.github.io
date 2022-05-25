@@ -14,7 +14,7 @@ tags: [security]
 
 #### Cyberark Privileged Access Management training done!
 
-It finally came to an end. After 4 days of an extensive privileged management course it finally came hit it's finale.
+It finally came to an end. After 4 days of an extensive privileged management course it finally hit it's finale.
 Met a lot of cool people, learned a bunch of stuff but now it's time for a mini break before my brain explodes again.
 
 Overal the training went pretty well there was a lot of stuff i already knew so that made it of course a bit simpler but it was nice
