@@ -26,3 +26,6 @@ The next of the road map is the Cyberark Privileged Access Install and Configure
 
 
 
+<p align="center">
+<img src="/assets/images/PAM-training.png" alt="drawing" width="300"/>
+</p>   
