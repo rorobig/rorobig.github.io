@@ -31,7 +31,7 @@ The next of the road map is the Cyberark Privileged Access Install and Configure
 <img src="/assets/images/PAM-training.png" alt="drawing" width="300"/>
 </p>   
 
-#### Update 2
+#### Update 
 
 Install and configure training now also in the pocket 🕺. Now onwards to the defender exam..
 
