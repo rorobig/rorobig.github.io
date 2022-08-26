@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Lost in the sauce</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2022-05-27T22:07:58+02:00</updated>
- <id>http://localhost:4000</id>
+ <link href="/atom.xml" rel="self"/>
+ <link href="/"/>
+ <updated>2022-08-27T00:04:04+02:00</updated>
+ <id></id>
  <author>
    <name>Rocheandley Kwidama</name>
    <email>rkwidama@hotmail.com</email>
@@ -14,14 +14,19 @@
  
  <entry>
    <title>Jammy Jellyfish</title>
-   <link href="http://localhost:4000/jammyjellyfish"/>
+   <link href="/jammyjellyfish"/>
    <updated>2022-05-24T00:00:00+02:00</updated>
-   <id>http://localhost:4000/jj</id>
+   <id>/jj</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;!-- &lt;img src=&quot;/assets/images/jj.gif&quot; alt=&quot;drawing&quot; width=&quot;300&quot;/&gt; --&gt;
 &lt;/p&gt;
 
 &lt;!-- #### Ubuntu 22.04 --&gt;
+
+&lt;div style=&quot;text-align: center;&quot; class=&quot;embed-container&quot;&gt;
+    &lt;iframe src=&quot;https://www.youtube.com/embed/oWqAf4eex14?autoplay=1&amp;amp;mute=0&quot; width=&quot;400&quot; height=&quot;280&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; autoplay=&quot;True&quot; allow=&quot;autoplay&quot;&gt;
+    &lt;/iframe&gt;
+  &lt;/div&gt;
 
 &lt;p&gt;Ubuntu finally fixed their shit with their new release of Jammy Jellyfish 22.04. Don’t get me wrong, Linux might be a great operating system but when it comes to UI, ….&lt;/p&gt;
 
@@ -36,18 +41,26 @@ And don’t get me wrong, I understand what the thought process behind this is b
 
 &lt;p&gt;Overall I’m pretty happy with it, one of these days I will have to have to install Proxmox on to do some further testing on how well it manages under pressure.&lt;/p&gt;
 
-&lt;div style=&quot;text-align: center;&quot; class=&quot;embed-container&quot;&gt;
-    &lt;iframe src=&quot;https://www.youtube.com/embed/oWqAf4eex14?autoplay=0&amp;amp;mute=0&quot; width=&quot;400&quot; height=&quot;280&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; autoplay=&quot;True&quot; allow=&quot;autoplay&quot;&gt;
+&lt;!-- &lt;div style=&quot;text-align: center;&quot; class=&quot;embed-container&quot;&gt;
+    &lt;iframe
+        src=&quot;https://www.youtube.com/embed/oWqAf4eex14?autoplay=1&amp;mute=0&quot;
+        width=&quot;400&quot;
+        height=&quot;280&quot;
+        frameborder=&quot;0&quot;
+        allowfullscreen=&quot;&quot;
+        autoplay=&quot;True&quot;
+        allow=&quot;autoplay&quot;
+        &gt;
     &lt;/iframe&gt;
-  &lt;/div&gt;
+  &lt;/div&gt; --&gt;
 </content>
  </entry>
  
  <entry>
    <title>Cyberark Administration Training</title>
-   <link href="http://localhost:4000/PAMA"/>
+   <link href="/PAMA"/>
    <updated>2022-05-24T00:00:00+02:00</updated>
-   <id>http://localhost:4000/Cyberark-admin</id>
+   <id>/Cyberark-admin</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/cyb-logo.jpg&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
 &lt;/p&gt;
@@ -57,24 +70,32 @@ And don’t get me wrong, I understand what the thought process behind this is b
 &lt;p&gt;It finally came to an end. After 4 days of an extensive privileged management course it finally hit it’s finale.
 Met a lot of cool people, learned a bunch of stuff but now it’s time for a mini break before my brain explodes again.&lt;/p&gt;
 
-&lt;p&gt;Overal the training went pretty well there was a lot of stuff i already knew so that made it of course a bit simpler but it was nice
+&lt;p&gt;Overall the training went pretty well there was a lot of stuff I already knew so that made it of course a bit simpler but it was nice
 to learn the small details of the PAM components and how they truly work with each other.&lt;/p&gt;
 
-&lt;p&gt;Not sure if i’ll do the exam cause i dont really need it but if i get a free voucher i for sure will.&lt;/p&gt;
+&lt;p&gt;Not sure if I’ll do the exam cause I don’t really need it but if I get a free voucher I for sure will.&lt;/p&gt;
 
-&lt;p&gt;The next of the road map is the Cyberark Privileged Access Install and Configure training!, i think i plan that one for the end of June but we’ll see but for now, Cheers!&lt;/p&gt;
+&lt;p&gt;The next of the road map is the Cyberark Privileged Access Install and Configure training!, I think I plan that one for the end of June but we’ll see but for now, Cheers!&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/PAM-training.png&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&quot;update-2&quot;&gt;Update 2&lt;/h4&gt;
+
+&lt;p&gt;Install and configure training now also in the pocket 🕺. Now onwards to the defender exam..&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/images/install-configure.png&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
 &lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>Waduhek are NFT'S ?!</title>
-   <link href="http://localhost:4000/nft"/>
+   <link href="/nft"/>
    <updated>2022-01-22T00:00:00+01:00</updated>
-   <id>http://localhost:4000/nft</id>
+   <id>/nft</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/ape.png&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
 &lt;/p&gt;
@@ -101,9 +122,9 @@ Just connect your ETH wallet and u can purchase any NFT u like.&lt;/p&gt;
  
  <entry>
    <title>SELinux</title>
-   <link href="http://localhost:4000/SEL"/>
+   <link href="/SEL"/>
    <updated>2021-12-12T00:00:00+01:00</updated>
-   <id>http://localhost:4000/SELiux</id>
+   <id>/SELiux</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/selinux.jpg&quot; alt=&quot;drawing&quot; width=&quot;400&quot; /&gt;
 &lt;/p&gt;
@@ -238,9 +259,9 @@ SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community
  
  <entry>
    <title>Windows 11</title>
-   <link href="http://localhost:4000/w-11"/>
+   <link href="/w-11"/>
    <updated>2021-11-26T00:00:00+01:00</updated>
-   <id>http://localhost:4000/w11</id>
+   <id>/w11</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;

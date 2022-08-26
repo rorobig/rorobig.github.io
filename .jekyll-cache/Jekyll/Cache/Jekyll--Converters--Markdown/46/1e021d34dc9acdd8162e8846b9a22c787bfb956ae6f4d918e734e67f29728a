@@ -1,8 +1,13 @@
-I"�<p align="center">
+I"<p align="center">
 <!-- <img src="/assets/images/jj.gif" alt="drawing" width="300"/> -->
 </p>
 
 <!-- #### Ubuntu 22.04 -->
+
+<div style="text-align: center;" class="embed-container">
+    <iframe src="https://www.youtube.com/embed/oWqAf4eex14?autoplay=1&amp;mute=0" width="400" height="280" frameborder="0" allowfullscreen="" autoplay="True" allow="autoplay">
+    </iframe>
+  </div>
 
 <p>Ubuntu finally fixed their shit with their new release of Jammy Jellyfish 22.04. Don’t get me wrong, Linux might be a great operating system but when it comes to UI, ….</p>
 
@@ -17,8 +22,16 @@ And don’t get me wrong, I understand what the thought process behind this is b
 
 <p>Overall I’m pretty happy with it, one of these days I will have to have to install Proxmox on to do some further testing on how well it manages under pressure.</p>
 
-<div style="text-align: center;" class="embed-container">
-    <iframe src="https://www.youtube.com/embed/oWqAf4eex14?autoplay=0&amp;mute=0" width="400" height="280" frameborder="0" allowfullscreen="" autoplay="True" allow="autoplay">
+<!-- <div style="text-align: center;" class="embed-container">
+    <iframe
+        src="https://www.youtube.com/embed/oWqAf4eex14?autoplay=1&mute=0"
+        width="400"
+        height="280"
+        frameborder="0"
+        allowfullscreen=""
+        autoplay="True"
+        allow="autoplay"
+        >
     </iframe>
-  </div>
+  </div> -->
 :ET
