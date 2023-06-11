@@ -1,5 +1,5 @@
 ---
-title:  Cyberark Administration Training
+title:  CyberArk 
 #not needed
 #date: 2022-29-01T00:00:00+00:00
 author: Rocheandley Kwidama

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Lost in the sauce</title>
- <link href="http://localhost:4000/atom.xml" rel="self"/>
- <link href="http://localhost:4000/"/>
- <updated>2022-11-13T17:10:10+01:00</updated>
- <id>http://localhost:4000</id>
+ <link href="/atom.xml" rel="self"/>
+ <link href="/"/>
+ <updated>2023-06-11T11:04:46+02:00</updated>
+ <id></id>
  <author>
    <name>Rocheandley Kwidama</name>
    <email>rkwidama@hotmail.com</email>
@@ -13,10 +13,28 @@
 
  
  <entry>
+   <title>How to GIT good!</title>
+   <link href="/git"/>
+   <updated>2023-06-11T00:00:00+02:00</updated>
+   <id>/git</id>
+   <content type="html">&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/images/git_good.png&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Git git git… one of the most amazing tools created to help make collaborated development easier, but can be quite tricky to get used to.
+The inspiration came to me to write this post to help those people who want to get started with it, but still find it a little freighting.&lt;/p&gt;
+
+&lt;h4 id=&quot;git-history&quot;&gt;Git history&lt;/h4&gt;
+&lt;p&gt;Git is a DevOps tool used for source control. It is a completely free and open-source version control system used to efficiently handle small to very large projects. Git is used to track changes to source code, allowing multiple developers to collaborate on nonlinear development. In fact, Linus Torvalds created Git in 2005 for the development of the Linux kernel.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>The adventures of Kubernetes and Docker </title>
-   <link href="http://localhost:4000/k8s"/>
+   <link href="/k8s"/>
    <updated>2022-11-13T00:00:00+01:00</updated>
-   <id>http://localhost:4000/k8s</id>
+   <id>/k8s</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/k8sdock.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
@@ -30,9 +48,9 @@
  
  <entry>
    <title>Jammy Jellyfish</title>
-   <link href="http://localhost:4000/jammyjellyfish"/>
+   <link href="/jammyjellyfish"/>
    <updated>2022-05-24T00:00:00+02:00</updated>
-   <id>http://localhost:4000/jj</id>
+   <id>/jj</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;!-- &lt;img src=&quot;/assets/images/jj.gif&quot; alt=&quot;drawing&quot; width=&quot;300&quot;/&gt; --&gt;
 &lt;/p&gt;
@@ -73,10 +91,10 @@ And don’t get me wrong, I understand what the thought process behind this is b
  </entry>
  
  <entry>
-   <title>Cyberark Administration Training</title>
-   <link href="http://localhost:4000/PAMA"/>
+   <title>CyberArk</title>
+   <link href="/PAMA"/>
    <updated>2022-05-24T00:00:00+02:00</updated>
-   <id>http://localhost:4000/Cyberark-admin</id>
+   <id>/Cyberark-admin</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/cyb-logo.jpg&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
 &lt;/p&gt;
@@ -109,9 +127,9 @@ to learn the small details of the PAM components and how they truly work with ea
  
  <entry>
    <title>Waduhek are NFT'S ?!</title>
-   <link href="http://localhost:4000/nft"/>
+   <link href="/nft"/>
    <updated>2022-01-22T00:00:00+01:00</updated>
-   <id>http://localhost:4000/nft</id>
+   <id>/nft</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/ape.png&quot; alt=&quot;drawing&quot; width=&quot;300&quot; /&gt;
 &lt;/p&gt;
@@ -138,9 +156,9 @@ Just connect your ETH wallet and u can purchase any NFT u like.&lt;/p&gt;
  
  <entry>
    <title>SELinux</title>
-   <link href="http://localhost:4000/SEL"/>
+   <link href="/SEL"/>
    <updated>2021-12-12T00:00:00+01:00</updated>
-   <id>http://localhost:4000/SELiux</id>
+   <id>/SELiux</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/selinux.jpg&quot; alt=&quot;drawing&quot; width=&quot;400&quot; /&gt;
 &lt;/p&gt;
@@ -275,9 +293,9 @@ SELinux I highly suggest &lt;a href=&quot;https://www.digitalocean.com/community
  
  <entry>
    <title>Windows 11</title>
-   <link href="http://localhost:4000/w-11"/>
+   <link href="/w-11"/>
    <updated>2021-11-26T00:00:00+01:00</updated>
-   <id>http://localhost:4000/w11</id>
+   <id>/w11</id>
    <content type="html">&lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/windowslogo.png&quot; alt=&quot;drawing&quot; width=&quot;500&quot; /&gt;
 &lt;/p&gt;
